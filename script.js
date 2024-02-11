@@ -37,5 +37,5 @@ function findDifferenceBetweenStrings(expected, actual) {
         output += "- - - - - - - - - - - - -- - - - - - - <br>";
     }
 
-    document.getElementById("output").innerHTML = errorText;
+    document.getElementById("output").innerHTML = output;
 }
