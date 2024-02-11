@@ -13,13 +13,17 @@ function findDifference() {
     // Extract "actualString" string
     startIndex = errorText.indexOf("%0AActual:%0A") + "%0AActual:%0A".length;
     var actualString = errorText.substring(startIndex).trim();
-    var output = "";
     
+    // Initialize output variable
+    var output = "";
+
+    // Call findDifferenceBetweenStrings and pass output by reference
     findDifferenceBetweenStrings(expectedString, actualString, output);
     
-    document.getElementById("output").innerText = output;
-
+    // Display the output
+    document.getElementById("output").innerHTML = output;
 }
+
 
 function findDifferenceBetweenStrings(expected, actual, output) {
     var expectedSentences = expected.split("%0A");
