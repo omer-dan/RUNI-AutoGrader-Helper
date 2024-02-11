@@ -13,15 +13,18 @@ function findDifference() {
     // Extract "actualString" string
     startIndex = errorText.indexOf("%0AActual:%0A") + "%0AActual:%0A".length;
     var actualString = errorText.substring(startIndex).trim();
+    var output = "";
+    
+    findDifferenceBetweenStrings(expectedString, actualString, output);
+    
+    document.getElementById("output").innerText = output;
 
-    findDifferenceBetweenStrings(expectedString, actualString);
 }
 
-function findDifferenceBetweenStrings(expected, actual) {
+function findDifferenceBetweenStrings(expected, actual, output) {
     var expectedSentences = expected.split("%0A");
     var actualSentences = actual.split("%0A");
 
-    var output = "";
 
     for (var i = 0; i < Math.min(expectedSentences.length, actualSentences.length); i++) {
         var expectedWords = expectedSentences[i].split(' ');
@@ -36,6 +39,4 @@ function findDifferenceBetweenStrings(expected, actual) {
         }
         output += "- - - - - - - - - - - - -- - - - - - - <br>";
     }
-
-    document.getElementById("output").innerHTML = output;
 }
