@@ -1,4 +1,6 @@
 function findDifference() {
+        console.log("Button clicked"); // Check if the function is called
+
     var errorText = document.getElementById("errorText").value;
 
     var startIndex = errorText.indexOf("The output for test") + "The output for test".length;
@@ -14,6 +16,7 @@ function findDifference() {
     startIndex = errorText.indexOf("%0AActual:%0A") + "%0AActual:%0A".length;
     var actualString = errorText.substring(startIndex).trim();
 
+    // Call findDifferenceBetweenStrings and update the output directly
     findDifferenceBetweenStrings(expectedString, actualString);
 }
 
@@ -37,5 +40,6 @@ function findDifferenceBetweenStrings(expected, actual) {
         output += "- - - - - - - - - - - - -- - - - - - - <br>";
     }
 
+    // Update the output directly
     document.getElementById("output").innerHTML = output;
 }
