@@ -1,4 +1,6 @@
 function findDifference() {
+        console.log("Button clicked"); // Check if the function is called
+
     var errorText = document.getElementById("errorText").value;
 
     var startIndex = errorText.indexOf("The output for test") + "The output for test".length;
