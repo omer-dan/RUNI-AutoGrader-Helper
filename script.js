@@ -1,5 +1,5 @@
 function findDifference() {
-    var errorText = document.getElementById("inputText").value;
+    var errorText = document.getElementById("errorText").value;
 
     var startIndex = errorText.indexOf("The output for test") + "The output for test".length;
     var endIndex = errorText.indexOf("did not match");
